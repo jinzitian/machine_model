@@ -12,7 +12,6 @@ from get_average_interval import get_average_interval
 lr = LR()
 
 def wrapper(X, y, clf, feature_num):
-    clf.fit(X,y)
     selector = RFE(clf, n_features_to_select = feature_num)
     selector.fit(X,y)
     return selector
